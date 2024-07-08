@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '../Typography';
 import Icon from '../Icon';
+import i18n from 'i18next';
 
 const ContextMenu = ({ items, ...props }) => {
   if (!items) {
@@ -21,7 +22,7 @@ const ContextMenu = ({ items, ...props }) => {
           style={{ justifyContent: 'space-between' }}
           className="hover:bg-primary-dark border-primary-dark flex cursor-pointer items-center border-b px-4 py-3 transition duration-300 last:border-b-0"
         >
-          <Typography>{item.label}</Typography>
+          <Typography>{i18n.t('ContextMenu:' + item.label)}</Typography>
           {item.iconRight && (
             <Icon
               name={item.iconRight}

@@ -1,1 +1,14 @@
-{}
+{
+  "About OHIF Viewer": "关于OHIF Viewer",
+  "Important links": "重要链接",
+  "Visit the forum": "访问论坛",
+  "Report an issue": "报告问题",
+  "More details": "更多细节",
+  "Version information": "版本信息",
+  "Repository URL": "存储库URL",
+  "Data citation": "数据引用",
+  "Version number": "版本号",
+  "Commit hash": "提交哈希码",
+  "Browser": "浏览器",
+  "OS": "操作系统"
+}

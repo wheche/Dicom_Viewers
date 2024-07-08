@@ -2,5 +2,7 @@
   "Studies": "检查",
   "Measurements": "测量",
   "Measure": "测量",
-  "Segmentation": "分割"
+  "Segmentation": "分割",
+  "4D Workflow": "4D工作流",
+  "Not available based on current context": "根据当前上下文不可用"
 }

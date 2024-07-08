@@ -393,24 +393,24 @@ function PanelStudyBrowserTracking({
       showOverlay: true,
       content: Dialog,
       contentProps: {
-        title: 'Untrack Series',
+        title: t('Untrack Series'),
         body: () => (
           <div className="bg-primary-dark p-4 text-white">
-            <p>Are you sure you want to untrack this series?</p>
+            <p>{t('Are you sure you want to untrack this series?')}</p>
             <p className="mt-2">
-              This action cannot be undone and will delete all your existing measurements.
+              {t('This action cannot be undone and will delete all your existing measurements.')}
             </p>
           </div>
         ),
         actions: [
           {
             id: 'cancel',
-            text: 'Cancel',
+            text: t('Cancel'),
             type: ButtonEnums.type.secondary,
           },
           {
             id: 'yes',
-            text: 'Yes',
+            text: t('Yes'),
             type: ButtonEnums.type.primary,
             classes: ['untrack-yes-button'],
           },
@@ -444,7 +444,7 @@ function PanelStudyBrowserTracking({
       onClickUntrack={displaySetInstanceUID => {
         onClickUntrack(displaySetInstanceUID);
       }}
-      onClickThumbnail={() => { }}
+      onClickThumbnail={() => {}}
       onDoubleClickThumbnail={onDoubleClickThumbnailHandler}
       activeDisplaySetInstanceUIDs={activeViewportDisplaySetInstanceUIDs}
     />

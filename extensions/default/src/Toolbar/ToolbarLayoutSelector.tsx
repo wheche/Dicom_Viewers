@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { LayoutSelector as OHIFLayoutSelector, ToolbarButton, LayoutPreset } from '@ohif/ui';
+import i18n from 'i18next';
 
 const defaultCommonPresets = [
   {
@@ -183,7 +184,7 @@ function LayoutSelector({
             ref={dropdownRef}
           >
             <div className="bg-secondary-dark flex flex-col gap-2.5 p-2">
-              <div className="text-aqua-pale text-xs">Common</div>
+              <div className="text-aqua-pale text-xs">{i18n.t('ContextMenu:Common')}</div>
 
               <div className="flex gap-4">
                 {commonPresets.map((preset, index) => (
@@ -199,7 +200,7 @@ function LayoutSelector({
 
               <div className="h-[2px] bg-black"></div>
 
-              <div className="text-aqua-pale text-xs">Advanced</div>
+              <div className="text-aqua-pale text-xs">{i18n.t('ContextMenu:Advanced')}</div>
 
               <div className="flex flex-col gap-2.5">
                 {advancedPresets.map((preset, index) => (
@@ -207,7 +208,7 @@ function LayoutSelector({
                     key={index + commonPresets.length}
                     classNames="hover:bg-primary-dark group flex gap-2 p-1 cursor-pointer"
                     icon={preset.icon}
-                    title={preset.title}
+                    title={i18n.t('ContextMenu:' + preset.title)}
                     disabled={preset.disabled}
                     commandOptions={preset.commandOptions}
                     onSelection={onSelectionPreset}
@@ -216,15 +217,17 @@ function LayoutSelector({
               </div>
             </div>
 
-            <div className="bg-primary-dark flex flex-col gap-2.5 border-l-2 border-solid border-black  p-2">
-              <div className="text-aqua-pale text-xs">Custom</div>
+            <div className="bg-primary-dark flex flex-col gap-2.5 border-l-2 border-solid border-black p-2">
+              <div className="text-aqua-pale text-xs">{i18n.t('ContextMenu:Custom')}</div>
               <DropdownContent
                 rows={rows}
                 columns={columns}
                 onSelection={onSelection}
               />
               <p className="text-aqua-pale text-xs leading-tight">
-                Hover to select <br></br>rows and columns <br></br> Click to apply
+                {i18n.t('ContextMenu:Hover to select')} <br></br>
+                {i18n.t('ContextMenu:rows and columns')} <br></br>{' '}
+                {i18n.t('ContextMenu:Click to apply')}
               </p>
             </div>
           </div>

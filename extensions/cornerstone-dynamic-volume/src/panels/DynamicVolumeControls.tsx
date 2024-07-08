@@ -11,6 +11,7 @@ import {
 } from '@ohif/ui';
 
 import { Enums } from '@cornerstonejs/core';
+import { useTranslation } from 'react-i18next';
 
 const controlClassNames = {
   sizeClassName: 'w-[58px] h-[28px]',
@@ -70,18 +71,20 @@ const DynamicVolumeControls = ({
     setSliderRangeValues(newValues);
   };
 
+  const { t } = useTranslation('DynamicVolumeControls');
+
   return (
     <div className="flex select-none flex-col">
       <PanelSection
-        title="Controls"
+        title={t('Controls')}
         childrenClassName="space-y-4 pb-5 px-5"
       >
         <div className="mt-2">
           <Header
-            title="View"
-            tooltip={
+            title={t('View')}
+            tooltip={t(
               'Select the view mode, 4D to view the dynamic volume or Computed to view the computed volume'
-            }
+            )}
           />
           <ButtonGroup className="mt-2 w-full">
             <button
@@ -99,7 +102,7 @@ const DynamicVolumeControls = ({
                 setComputedView(true);
               }}
             >
-              Computed
+              {t('Computed')}
             </button>
           </ButtonGroup>
         </div>
@@ -121,39 +124,39 @@ const DynamicVolumeControls = ({
         </div>
         <div className={`mt-6 flex flex-col ${computedView ? '' : 'ohif-disabled'}`}>
           <Header
-            title="Computed Operation"
+            title={t('Computed Operation')}
             tooltip={
               <div>
-                Operation Buttons (SUM, AVERAGE, SUBTRACT): Select the mathematical operation to be
-                applied to the data set.
-                <br></br> Range Slider: Choose the numeric range within which the operation will be
-                performed.
-                <br></br>Generate Button: Execute the chosen operation on the specified range of
-                data.{' '}
+                {t('Operation Buttons (SUM, AVERAGE, SUBTRACT)')}:{' '}
+                {t('Select the mathematical operation to be applied to the data set.')}
+                <br></br> {t('Range Slider')}:{' '}
+                {t('Choose the numeric range within which the operation will be performed.')}
+                <br></br> {t('Generate Button')}:{' '}
+                {t('Execute the chosen operation on the specified range of data.')}{' '}
               </div>
             }
           />
           <ButtonGroup
-            className={`mt-2 w-full `}
+            className={`mt-2 w-full`}
             separated={true}
           >
             <button
               className="w-1/2"
               onClick={() => setComputeViewMode(Enums.DynamicOperatorType.SUM)}
             >
-              {Enums.DynamicOperatorType.SUM.toString().toUpperCase()}
+              {t(Enums.DynamicOperatorType.SUM.toString().toUpperCase())}
             </button>
             <button
               className="w-1/2"
               onClick={() => setComputeViewMode(Enums.DynamicOperatorType.AVERAGE)}
             >
-              {Enums.DynamicOperatorType.AVERAGE.toString().toUpperCase()}
+              {t(Enums.DynamicOperatorType.AVERAGE.toString().toUpperCase())}
             </button>
             <button
               className="w-1/2"
               onClick={() => setComputeViewMode(Enums.DynamicOperatorType.SUBTRACT)}
             >
-              {Enums.DynamicOperatorType.SUBTRACT.toString().toUpperCase()}
+              {t(Enums.DynamicOperatorType.SUBTRACT.toString().toUpperCase())}
             </button>
           </ButtonGroup>
           <div className="w-ful mt-2">
@@ -173,7 +176,7 @@ const DynamicVolumeControls = ({
               onGenerate(computeViewMode);
             }}
           >
-            Generate
+            {t('Generate')}
           </Button>
         </div>
       </PanelSection>
@@ -196,16 +199,19 @@ function FrameControls({
   computedView,
 }) {
   const getPlayPauseIconName = () => (isPlaying ? 'icon-pause' : 'icon-play');
+  const { t } = useTranslation('DynamicVolumeControls');
 
   return (
     <div className={computedView && 'ohif-disabled'}>
       <Header
-        title="4D Controls"
+        title={t('4D Controls')}
         tooltip={
           <div>
-            Play/Pause Button: Begin or pause the animation of the 4D visualization. <br></br> Frame
-            Selector: Navigate through individual frames of the 4D data. <br></br> FPS (Frames Per
-            Second) Selector: Adjust the playback speed of the animation.
+            {t('Play/Pause Button')}: {t('Begin or pause the animation of the 4D visualization.')}
+            <br></br> {t('Frame Selector')}:{' '}
+            {t('Navigate through individual frames of the 4D data.')} <br></br>{' '}
+            {t('FPS (Frames PerSecond) Selector')}:{' '}
+            {t('Adjust the playback speed of the animation.')}
           </div>
         }
       />
@@ -216,7 +222,7 @@ function FrameControls({
         >
           <Icon
             name={getPlayPauseIconName()}
-            className=" active:text-primary-light hover:bg-customblue-300 h-[24px] w-[24px] cursor-pointer text-white"
+            className="active:text-primary-light hover:bg-customblue-300 h-[24px] w-[24px] cursor-pointer text-white"
           />
         </IconButton>
         <InputNumber
@@ -224,7 +230,7 @@ function FrameControls({
           onChange={onFrameChange}
           minValue={0}
           maxValue={framesLength}
-          label="Frame"
+          label={t('Frame')}
           {...controlClassNames}
         />
         <InputNumber
@@ -233,7 +239,7 @@ function FrameControls({
           minValue={minFps}
           maxValue={maxFps}
           {...controlClassNames}
-          label="FPS"
+          label={t('FPS')}
         />
       </div>
     </div>

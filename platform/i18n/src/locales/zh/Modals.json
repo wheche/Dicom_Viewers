@@ -10,10 +10,12 @@
   "Image Preview": "预览",
   "Image preview": "预览",
   "Image width (px)": "宽(px)",
-  "keepAspectRatio": "Keep aspect ratio",
-  "loadingPreview": "Loading Image Preview...",
+  "keepAspectRatio": "保持纵横比",
+  "loadingPreview": "正在加载预览图像...",
   "The minimum valid height is 100px.": "图片最小高度值为100px",
   "The minimum valid width is 100px.": "图片最小宽度值为100px",
   "Show Annotations": "显示标注",
-  "Please specify the dimensions, filename, and desired type for the output image.": "请指定输出图像的尺寸、文件名和所需类型。"
+  "Please specify the dimensions, filename, and desired type for the output image.": "请指定输出图像的尺寸、文件名和所需类型。",
+  "Download High Quality Image":"下载高质量图像",
+  "DICOM Tag Browser":"DICOM标签浏览器"
 }

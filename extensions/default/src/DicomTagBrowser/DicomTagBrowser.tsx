@@ -8,6 +8,8 @@ import debounce from 'lodash.debounce';
 import DicomTagTable from './DicomTagTable';
 import './DicomTagBrowser.css';
 
+import { useTranslation } from 'react-i18next';
+
 const { ImageSet } = classes;
 const { DicomMetaDictionary } = dcmjs.data;
 const { nameMap } = DicomMetaDictionary;
@@ -100,6 +102,8 @@ const DicomTagBrowser = ({ displaySets, displaySetInstanceUID }) => {
     return debounce(setFilterValue, 200);
   }, []);
 
+  const { t } = useTranslation('DicomTagBrowser');
+
   useEffect(() => {
     return () => {
       debouncedSetFilterValue?.cancel();
@@ -114,7 +118,7 @@ const DicomTagBrowser = ({ displaySets, displaySetInstanceUID }) => {
             variant="subtitle"
             className="mr-4"
           >
-            Series
+            {t('Series')}
           </Typography>
           <div className="mr-8 grow">
             <Select
@@ -133,7 +137,7 @@ const DicomTagBrowser = ({ displaySets, displaySetInstanceUID }) => {
               variant="subtitle"
               className="mr-4"
             >
-              Instance Number
+              {t('Instance Number')}
             </Typography>
           )}
           {showInstanceList && (

@@ -4,6 +4,7 @@ import ROIThresholdConfiguration, {
   ROI_STAT,
 } from './PanelROIThresholdSegmentation/ROIThresholdConfiguration';
 import * as cs3dTools from '@cornerstonejs/tools';
+import i18n from 'i18next';
 
 const LOWER_CT_THRESHOLD_DEFAULT = -1024;
 const UPPER_CT_THRESHOLD_DEFAULT = 1024;
@@ -127,7 +128,7 @@ function RectangleROIOptions({ servicesManager, commandsManager }: withAppTypes)
           className="mt-2 !h-[26px] !w-[75px]"
           onClick={handleROIThresholding}
         >
-          Run
+          {i18n.t('ROIThresholdConfiguration:Run')}
         </Button>
       )}
     </div>

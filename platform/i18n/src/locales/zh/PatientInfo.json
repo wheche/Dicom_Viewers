@@ -4,5 +4,7 @@
   "MRN": "病例号",
   "Thickness": "厚度",
   "Spacing": "间距",
-  "Scanner": "扫描器"
+  "Scanner": "扫描器",
+  "Patient": "患者",
+  "Multiple Patients": "多个患者"
 }

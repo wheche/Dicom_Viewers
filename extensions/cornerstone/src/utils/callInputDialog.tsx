@@ -1,5 +1,6 @@
 import React from 'react';
 import { Input, Dialog, ButtonEnums, LabellingFlow } from '@ohif/ui';
+import i18n from 'i18next';
 
 /**
  *
@@ -53,13 +54,13 @@ function callInputDialog(
       showOverlay: true,
       content: Dialog,
       contentProps: {
-        title: dialogTitle,
+        title: i18n.t('Dialog:' + dialogTitle),
         value: { label },
         noCloseButton: true,
         onClose: () => uiDialogService.dismiss({ id: dialogId }),
         actions: [
-          { id: 'cancel', text: 'Cancel', type: ButtonEnums.type.secondary },
-          { id: 'save', text: 'Save', type: ButtonEnums.type.primary },
+          { id: 'cancel', text: i18n.t('Dialog:Cancel'), type: ButtonEnums.type.secondary },
+          { id: 'save', text: i18n.t('Dialog:Save'), type: ButtonEnums.type.primary },
         ],
         onSubmit: onSubmitHandler,
         body: ({ value, setValue }) => {
@@ -69,7 +70,7 @@ function callInputDialog(
               className="border-primary-main bg-black"
               type="text"
               id="annotation"
-              label={inputLabel}
+              label={i18n.t('Dialog:' + inputLabel)}
               labelClassName="text-white text-[14px] leading-[1.2]"
               value={value.label}
               onChange={event => {

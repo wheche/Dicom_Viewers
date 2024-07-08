@@ -4,6 +4,8 @@ import { StackViewport, VolumeViewport } from '@cornerstonejs/core';
 import { ColorbarProps } from '../../types/Colorbar';
 import { utilities } from '@cornerstonejs/core';
 
+import { useTranslation } from 'react-i18next';
+
 export function setViewportColorbar(
   viewportId,
   displaySets,
@@ -100,11 +102,13 @@ export function Colorbar({
     };
   }, [viewportId]);
 
+  const { t } = useTranslation('WindowLevelActionMenu');
+
   return (
     <div className="all-in-one-menu-item flex w-full justify-center">
       <div className="mr-2 w-[28px]"></div>
       <SwitchButton
-        label="Display Color bar"
+        label={t('Display Color bar')}
         checked={showColorbar}
         onChange={() => {
           onSetColorbar();

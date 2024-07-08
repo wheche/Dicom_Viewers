@@ -4,6 +4,7 @@ import initWorkflowSteps from './initWorkflowSteps';
 import initToolGroups from './initToolGroups';
 import toolbarButtons from './toolbarButtons';
 import segmentationButtons from './segmentationButtons';
+import i18n from 'i18next';
 
 const extensionDependencies = {
   '@ohif/extension-default': '3.7.0-beta.76',
@@ -114,7 +115,7 @@ function modeFactory({ modeConfiguration }) {
       // Todo: we need to find a better way to validate the mode
       return {
         valid: study.mrn === 'M1',
-        description: 'This mode is only available for 4D PET/CT studies.',
+        description: i18n.t('Modes:This mode is only available for 4D PET/CT studies.'),
       };
     },
 

@@ -90,7 +90,6 @@ function modeFactory({ modeConfiguration }) {
       //   },
       // ]);
 
-
       // Init Default and SR ToolGroups
       initToolGroups(extensionManager, toolGroupService, commandsManager, this.labelConfig);
 
@@ -168,8 +167,7 @@ function modeFactory({ modeConfiguration }) {
       return {
         valid: !!modalities_list.filter(modality => NON_IMAGE_MODALITIES.indexOf(modality) === -1)
           .length,
-        description:
-          'The mode does not support studies that ONLY include the following modalities: SM, ECG, SR, SEG, RTSTRUCT',
+        description: `${i18n.t('Modes:The mode does not support studies that ONLY include the following modalities')}: SM, ECG, SR, SEG, RTSTRUCT`,
       };
     },
     routes: [

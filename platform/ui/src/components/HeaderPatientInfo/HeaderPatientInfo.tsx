@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Icon } from '@ohif/ui';
 import { utils } from '@ohif/core';
 import { PatientInfoVisibility } from '../../types';
+import { useTranslation } from 'react-i18next';
 
 const { formatDate, formatPN } = utils;
 
@@ -91,6 +92,7 @@ function HeaderPatientInfo({ servicesManager, appConfig }: withAppTypes) {
 
   const formattedPatientName = formatWithEllipsis(patientInfo.PatientName, 27);
   const formattedPatientID = formatWithEllipsis(patientInfo.PatientID, 15);
+  const { t } = useTranslation('PatientInfo');
 
   return (
     <div
@@ -116,7 +118,7 @@ function HeaderPatientInfo({ servicesManager, appConfig }: withAppTypes) {
         ) : (
           <div className="text-primary-active self-center text-[13px]">
             {' '}
-            {isMixedPatients ? 'Multiple Patients' : 'Patient'}
+            {t(isMixedPatients ? 'Multiple Patients' : 'Patient')}
           </div>
         )}
       </div>

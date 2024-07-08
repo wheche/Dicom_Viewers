@@ -8,11 +8,14 @@
   "No": "否",
   "Track measurements for this series?": "对序列的测量值进行跟踪?",
   "Yes": "是",
+  "No,do not ask again": "否，不再询问",
   "Cancel": "取消",
   "Measurements cannot span across multiple studies. Do you want to save your tracked measurements?": "测量不能跨多个检查，是否要保存跟踪的测量值？",
   "No, discard previously tracked series & measurements": "否，放弃之前跟踪的序列和测量值。",
   "Do you want to continue tracking measurements for this study?": "继续对该检查进行测量跟踪吗？",
   "Create Report": "新建报告",
   "Measurements saved successfully": "测量值保存成功",
-  "Failed to store measurements": "测量值保存失败"
+  "Failed to store measurements": "测量值保存失败",
+  "SUV Peak":"SUV峰值",
+  "Segmented volume does not allow SUV Peak calculation": "分割体积不允许SUV峰值计算"
 }

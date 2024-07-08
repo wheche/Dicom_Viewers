@@ -1,4 +1,5 @@
 import { cache } from '@cornerstonejs/core';
+import i18n from 'i18next';
 
 export const handleROIThresholding = async ({
   segmentationId,
@@ -33,8 +34,8 @@ export const handleROIThresholding = async ({
 
       segment.cachedStats = cachedStats;
       segment.displayText = [
-        `SUV Peak: ${suvPeak.suvPeak.toFixed(2)}`,
-        `Volume: ${lesionStats.volume.toFixed(2)} mm3`,
+        `${i18n.t('TMTV:SUV Peak')}: ${suvPeak.suvPeak.toFixed(2)}`,
+        `${i18n.t('TMTV:Volume')}: ${lesionStats.volume.toFixed(2)} mm3`,
       ];
       updatedPerSegmentCachedStats[segmentIndex] = cachedStats;
 

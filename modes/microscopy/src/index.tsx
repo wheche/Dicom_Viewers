@@ -72,7 +72,7 @@ function modeFactory({ modeConfiguration }) {
 
       return {
         valid: modalities_list.includes('SM'),
-        description: 'Microscopy mode only supports the SM modality',
+        description: i18n.t('Modes:Microscopy mode only supports the SM modality'),
       };
     },
 

@@ -2,5 +2,17 @@
   "Enter your annotation": "$t(Common:Enter your annotation)",
   "Cancel": "$t(Common:Cancel)",
   "Save": "$t(Common:Save)",
-  "Provide a name for your report": "输入报告名称"
+  "Provide a name for your report": "输入报告名称",
+  "OHIF Viewer is": "OHIF Viewer",
+  "for investigational use only": "仅供研究使用",
+  "Learn more about OHIF Viewer": "了解更多关于OHIF Viewer",
+  "Confirm and Hide": "确认并隐藏",
+  "Segment": "分割",
+  "Confirm": "$t(Common:Save)",
+  "Enter the segment label": "输入分割标签",
+  "Calibration": "校准",
+  "Actual Physical distance (mm)": "实际物理距离（mm）",
+  "Annotation": "注释",
+  "Enter label": "输入标签",
+  "Search labels": "搜索标签"
 }

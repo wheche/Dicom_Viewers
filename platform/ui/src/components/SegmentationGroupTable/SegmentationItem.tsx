@@ -94,12 +94,12 @@ function SegmentationItem({
               ],
             ]}
           >
-            <div className="hover:bg-secondary-dark grid h-[28px] w-[28px]  cursor-pointer place-items-center rounded-[4px]">
+            <div className="hover:bg-secondary-dark grid h-[28px] w-[28px] cursor-pointer place-items-center rounded-[4px]">
               <Icon name="icon-more-menu"></Icon>
             </div>
           </Dropdown>
           <div
-            className=" h-[28px] bg-black"
+            className="h-[28px] bg-black"
             style={{ width: '3px' }}
           ></div>
         </div>
@@ -113,7 +113,7 @@ function SegmentationItem({
               position="bottom-right"
               content={
                 <div className="flex flex-col">
-                  <div className="text-[13px] text-white">Series:</div>
+                  <div className="text-[13px] text-white">{t('Series')}:</div>
                   <div className="text-aqua-pale text-[13px]">{segmentation.description}</div>
                 </div>
               }

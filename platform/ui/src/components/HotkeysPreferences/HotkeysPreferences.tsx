@@ -88,7 +88,7 @@ const HotkeysPreferences = ({
                             isFirst && 'mt-5'
                           )}
                         >
-                          {definition.label}
+                          {t(definition.label)}
                         </Typography>
                       </div>
                       <div className="flex flex-col">

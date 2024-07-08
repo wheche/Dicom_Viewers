@@ -3,12 +3,16 @@ import React from 'react';
 import { Icon } from '@ohif/ui';
 import DividerItem from './DividerItem';
 
+import { useTranslation } from 'react-i18next';
+
 type BackItemProps = {
   backLabel?: string;
   onBackClick: () => void;
 };
 
 const BackItem = ({ backLabel, onBackClick }: BackItemProps) => {
+  const { t } = useTranslation('Common');
+
   return (
     <>
       <div
@@ -17,7 +21,7 @@ const BackItem = ({ backLabel, onBackClick }: BackItemProps) => {
       >
         <Icon name="content-prev"></Icon>
 
-        <div className="pl-2">{backLabel || 'Back to Display Options'}</div>
+        <div className="pl-2">{t(backLabel || 'Back to Display Options')}</div>
       </div>
       <DividerItem></DividerItem>
     </>

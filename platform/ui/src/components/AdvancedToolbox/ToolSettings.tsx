@@ -1,5 +1,6 @@
 import React from 'react';
 import { ButtonGroup, InputDoubleRange, InputRange } from '../../components';
+import i18n from 'i18next';
 
 const SETTING_TYPES = {
   RANGE: 'range',
@@ -47,7 +48,7 @@ const renderRangeSetting = option => {
       className="flex items-center"
       key={option.id}
     >
-      <div className="w-1/3 text-[13px]">{option.name}</div>
+      <div className="w-1/3 text-[13px]">{i18n.t(`SegmentationTable:${option.name}`)}</div>
       <div className="w-2/3">
         <InputRange
           minValue={option.min}
@@ -73,7 +74,7 @@ const renderRadioSetting = option => {
         }}
         key={`button-${option.id}-${index}`}
       >
-        {label}
+        {i18n.t(`SegmentationTable:${label}`)}
       </button>
     ));
   };
@@ -83,7 +84,7 @@ const renderRadioSetting = option => {
       className="flex items-center justify-between text-[13px]"
       key={option.id}
     >
-      <span>{option.name}</span>
+      <span>{i18n.t(`SegmentationTable:${option.name}`)}</span>
       <div className="max-w-1/2">
         <ButtonGroup
           className="border-secondary-light rounded-md border"

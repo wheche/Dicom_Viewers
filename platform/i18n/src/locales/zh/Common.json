@@ -4,6 +4,7 @@
   "Measurements": "测量值",
   "More": "更多",
   "Next": "下一个",
+  "NoStudyDate": "无检查日期",
   "Play": "播放",
   "Previous": "上一个",
   "Reset": "复原",
@@ -11,5 +12,18 @@
   "Series": "序列",
   "Show": "显示",
   "Stop": "停止",
-  "StudyDate": "时间"
+  "StudyDate": "时间",
+  "Back to Display Options": "返回显示选项",
+  "Window Level":"窗位",
+  "Cancel":"取消",
+  "Save":"保存",
+  "Confirm":"确认",
+  "Untrack Series":"取消追踪序列",
+  "Are you sure you want to untrack this series?":"您确定要取消追踪此序列吗？",
+  "This action cannot be undone and will delete all your existing measurements.":"此操作无法撤消，并将删除您的所有现有测量结果。",
+  "Yes":"确定",
+  "Series is tracked and can be viewed in the measurement panel":
+ "已追踪序列可在测量面板中查看",
+ "Measurements for untracked series will not be shown in the measurements panel":
+ "未追踪序列的测量结果不会显示在测量面板中"
 }

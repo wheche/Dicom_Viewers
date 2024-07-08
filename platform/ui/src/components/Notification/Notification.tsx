@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Button, { ButtonEnums } from '../Button';
 import Icon from '../Icon';
+import { useTranslation } from 'react-i18next';
 
 const Notification = ({
   id,
@@ -70,6 +71,7 @@ const Notification = ({
   };
 
   const { icon, color } = getIconData();
+  const { t } = useTranslation('Notification');
 
   return (
     <div
@@ -98,7 +100,7 @@ const Notification = ({
                 onSubmit(action.value);
               }}
             >
-              {action.text}
+              {t(action.text)}
             </Button>
           );
         })}

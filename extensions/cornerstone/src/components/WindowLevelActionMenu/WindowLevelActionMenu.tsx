@@ -143,7 +143,7 @@ export function WindowLevelActionMenu({
         {colormaps && !is3DVolume && (
           <AllInOneMenu.SubMenu
             key="colorLUTPresets"
-            itemLabel="Color LUT"
+            itemLabel={t('Color LUT')}
             itemIcon="icon-color-lut"
           >
             <Colormap

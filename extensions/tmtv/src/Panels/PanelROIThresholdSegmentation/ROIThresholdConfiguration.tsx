@@ -5,13 +5,13 @@ import { useTranslation } from 'react-i18next';
 export const ROI_STAT = 'roi_stat';
 const RANGE = 'range';
 
-const options = [
-  { value: ROI_STAT, label: 'Max', placeHolder: 'Max' },
-  { value: RANGE, label: 'Range', placeHolder: 'Range' },
-];
-
 function ROIThresholdConfiguration({ config, dispatch, runCommand }) {
   const { t } = useTranslation('ROIThresholdConfiguration');
+
+  const options = [
+    { value: ROI_STAT, label: t('Max'), placeHolder: t('Max') },
+    { value: RANGE, label: t('Range'), placeHolder: t('Range') },
+  ];
 
   return (
     <div className="bg-primary-dark flex flex-col space-y-4">
@@ -20,7 +20,7 @@ function ROIThresholdConfiguration({ config, dispatch, runCommand }) {
           <Select
             label={t('Strategy')}
             closeMenuOnSelect={true}
-            className="border-primary-main mr-2 bg-black text-white "
+            className="border-primary-main mr-2 bg-black text-white"
             options={options}
             placeholder={options.find(option => option.value === config.strategy).placeHolder}
             value={config.strategy}
@@ -88,7 +88,7 @@ function ROIThresholdConfiguration({ config, dispatch, runCommand }) {
                 >
                   <Label
                     className="font-inter text-[13px] text-white"
-                    text="Lower & Upper Ranges"
+                    text={t('Lower & Upper Ranges')}
                   ></Label>
                 </td>
               </tr>

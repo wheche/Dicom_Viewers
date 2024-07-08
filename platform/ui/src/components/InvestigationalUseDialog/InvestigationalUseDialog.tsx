@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
 import Button, { ButtonEnums } from '../Button';
+import i18n from 'i18next';
 
 export enum showDialogOption {
   NeverShowDialog = 'never',
@@ -71,15 +72,17 @@ const InvestigationalUseDialog = ({
           />
           <div className="flex flex-col">
             <div className="text-[19px] text-white">
-              OHIF Viewer is{' '}
-              <span className="text-primary-light">for investigational use only</span>
+              {i18n.t('Dialog:OHIF Viewer is')}{' '}
+              <span className="text-primary-light">
+                {i18n.t('Dialog:for investigational use only')}
+              </span>
             </div>
             <div className="text-[13px] text-white">
               <span
                 className="text-primary-active cursor-pointer"
                 onClick={() => window.open('https://ohif.org/', '_blank')}
               >
-                Learn more about OHIF Viewer
+                {i18n.t('Dialog:Learn more about OHIF Viewer')}
               </span>
             </div>
           </div>
@@ -90,7 +93,7 @@ const InvestigationalUseDialog = ({
           className="bg-primary-main"
           dataCY="confirm-and-hide-button"
         >
-          Confirm and Hide
+          {i18n.t('Dialog:Confirm and Hide')}
         </Button>
       </div>
     </div>

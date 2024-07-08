@@ -3,6 +3,7 @@ import { id } from './id';
 import toolbarButtons from './toolbarButtons';
 import segmentationButtons from './segmentationButtons';
 import initToolGroups from './initToolGroups';
+import i18n from 'i18next';
 
 const DEFAULT_TOOL_GROUP_ID = 'default';
 const VOLUME3D_TOOL_GROUP_ID = 'volume3d';
@@ -48,7 +49,7 @@ function modeFactory({ modeConfiguration }) {
      * Mode name, which is displayed in the viewer's UI in the workList, for the
      * user to select the mode.
      */
-    displayName: 'Segmentation',
+    displayName: i18n.t('Modes:Segmentation'),
     /**
      * Runs when the Mode Route is mounted to the DOM. Usually used to initialize
      * Services and other resources.
@@ -113,8 +114,7 @@ function modeFactory({ modeConfiguration }) {
           modalitiesArray.length === 1
             ? !['SM', 'US', 'MG', 'OT', 'DOC', 'CR'].includes(modalitiesArray[0])
             : true,
-        description:
-          'The mode does not support studies that ONLY include the following modalities: SM, US, MG, OT, DOC, CR',
+        description: `${i18n.t('Modes:The mode does not support studies that ONLY include the following modalities')}: SM, US, MG, OT, DOC, CR`,
       };
     },
     /**

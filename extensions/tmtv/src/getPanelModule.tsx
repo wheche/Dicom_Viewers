@@ -1,6 +1,7 @@
 import React from 'react';
 import { PanelPetSUV, PanelROIThresholdExport } from './Panels';
 import { Toolbox } from '@ohif/ui';
+import i18n from 'i18next';
 
 // TODO:
 // - No loading UI exists yet
@@ -25,7 +26,7 @@ function getPanelModule({ commandsManager, extensionManager, servicesManager }) 
           servicesManager={servicesManager}
           extensionManager={extensionManager}
           buttonSectionId="ROIThresholdToolbox"
-          title="Threshold Tools"
+          title={i18n.t('TMTV:Threshold Tools')}
         />
       </>
     );
@@ -47,21 +48,21 @@ function getPanelModule({ commandsManager, extensionManager, servicesManager }) 
       name: 'petSUV',
       iconName: 'tab-patient-info',
       iconLabel: 'Patient Info',
-      label: 'Patient Info',
+      label: i18n.t('TMTV:Patient Info'),
       component: wrappedPanelPetSuv,
     },
     {
       name: 'tmtvBox',
       iconName: 'tab-segmentation',
       iconLabel: 'Segmentation',
-      label: 'Segmentation Toolbox',
+      label: i18n.t('TMTV:Segmentation Toolbox'),
       component: wrappedROIThresholdToolbox,
     },
     {
       name: 'tmtvExport',
       iconName: 'tab-segmentation',
       iconLabel: 'Segmentation',
-      label: 'Segmentation Export',
+      label: i18n.t('TMTV:Segmentation Export'),
       component: wrappedROIThresholdExport,
     },
   ];

@@ -1,5 +1,11 @@
 {
   "Basic Viewer": "基础查看器",
   "Total Metabolic Tumor Volume": "总代谢肿瘤体积",
-  "Download High Quality Image": "A"
+  "Download High Quality Image": "下载高质量图像",
+  "Microscopy": "显微镜",
+  "Segmentation": "分割",
+  "The mode requires both PT and CT series in the study": "此模式要求检查中包含PT和CT序列",
+  "Microscopy mode only supports the SM modality": "显微镜模式仅支持SM模态",
+  "This mode is only available for 4D PET/CT studies.": "此模式仅适用于4D PET/CT检查。",
+  "The mode does not support studies that ONLY include the following modalities": "此模式仅支持包含以下模态的检查"
 }

@@ -3,6 +3,7 @@ import React from 'react';
 import { useAppConfig } from '@state';
 import { Toolbox } from '@ohif/ui';
 import PanelSegmentation from './panels/PanelSegmentation';
+import { useTranslation } from 'react-i18next';
 
 const getPanelModule = ({
   commandsManager,
@@ -32,6 +33,7 @@ const getPanelModule = ({
 
   const wrappedPanelSegmentationWithTools = configuration => {
     const [appConfig] = useAppConfig();
+    const { t } = useTranslation('SegmentationTable');
 
     return (
       <>
@@ -40,7 +42,7 @@ const getPanelModule = ({
           servicesManager={servicesManager}
           extensionManager={extensionManager}
           buttonSectionId="segmentationToolbox"
-          title="Segmentation Tools"
+          title={t('Segmentation Tools')}
           configuration={{
             ...configuration,
           }}

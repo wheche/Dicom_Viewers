@@ -1,1 +1,7 @@
-{}
+{
+  "Start date":"开始日期",
+  "End date":"结束日期",
+  "Today":"今天",
+  "Last 7 days":"最近7天",
+  "Last 30 days":"最近30天"
+}

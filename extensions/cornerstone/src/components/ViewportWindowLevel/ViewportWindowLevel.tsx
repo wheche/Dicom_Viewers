@@ -5,6 +5,7 @@ import { PanelSection, WindowLevel } from '@ohif/ui';
 import vtkColorMaps from '@kitware/vtk.js/Rendering/Core/ColorTransferFunction/ColorMaps';
 import { Enums, eventTarget, cache as cs3DCache, utilities as csUtils } from '@cornerstonejs/core';
 import { getViewportVolumeHistogram } from './getViewportVolumeHistogram';
+import i18n from 'i18next';
 
 const { Events } = Enums;
 
@@ -350,7 +351,7 @@ const ViewportWindowLevel = ({
   }, [viewportId, cornerstoneViewportService, updateViewportHistograms]);
 
   return (
-    <PanelSection title="Window Level">
+    <PanelSection title={i18n.t('Common:Window Level')}>
       {windowLevels.map((windowLevel, i) => {
         if (!windowLevel.histogram) {
           return null;

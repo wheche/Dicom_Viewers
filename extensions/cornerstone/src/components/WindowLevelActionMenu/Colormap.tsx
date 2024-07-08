@@ -3,6 +3,8 @@ import { AllInOneMenu, ButtonGroup, SwitchButton } from '@ohif/ui';
 import { StackViewport } from '@cornerstonejs/core';
 import { ColormapProps } from '../../types/Colormap';
 
+import { useTranslation } from 'react-i18next';
+
 export function Colormap({
   colormaps,
   viewportId,
@@ -81,6 +83,8 @@ export function Colormap({
     setActiveDisplaySet(displaySets[displaySets.length - 1]);
   }, [displaySets]);
 
+  const { t } = useTranslation('WindowLevelActionMenu');
+
   return (
     <>
       {buttons.length > 1 && (
@@ -110,7 +114,7 @@ export function Colormap({
       )}
       <div className="all-in-one-menu-item flex w-full justify-center">
         <SwitchButton
-          label="Preview in viewport"
+          label={t('Preview in viewport')}
           checked={showPreview}
           onChange={checked => {
             setShowPreview(checked);
@@ -122,7 +126,7 @@ export function Colormap({
         {colormaps.map((colormap, index) => (
           <AllInOneMenu.Item
             key={index}
-            label={colormap.description}
+            label={t(colormap.description)}
             onClick={() => {
               onSetColorLUT({
                 viewportId,

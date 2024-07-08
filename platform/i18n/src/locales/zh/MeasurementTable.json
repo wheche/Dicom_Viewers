@@ -8,9 +8,11 @@
   "Measurements": "测量",
   "Targets": "靶向",
   "Export CSV": "导出CSV",
-  "No tracked measurements": "没有跟踪的测量值",
+  "No tracked measurements": "没有追踪的测量值",
   "Export": "导出",
+  "Download CSV": "下载CSV",
   "Create Report": "新建报告",
-  "Do you want to add this measurement to the existing report?": "将测量添加到报告中？",
-  "Track measurements for this series?": "要对个序列进行跟踪吗？"
+  "Do you want to add this measurement to the existing report?": "是否要将此测量添加到报告中？",
+  "Track measurements for this series?": "要对这个序列进行跟踪吗？",
+  "No, do not ask again": "否，不再询问"
 }

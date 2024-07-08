@@ -1,4 +1,17 @@
 {
   "Add Label": "添加标注",
-  "Delete measurement": "删除测量"
+  "Delete measurement": "删除测量",
+  "Common": "常用",
+  "Advanced": "高级",
+  "Custom": "自定义",
+  "Hover to select": "悬停选择",
+  "rows and columns": "行和列",
+  "Click to apply": "单击应用",
+  "MPR": "MPR",
+  "3D four up": "3D四视窗",
+  "3D main": "3D上位主视窗",
+  "Axial Primary": "轴位主视窗",
+  "3D only": "仅3D视窗",
+  "3D primary": "3D主视窗",
+  "Frame View": "帧视图"
 }

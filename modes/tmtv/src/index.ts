@@ -185,7 +185,7 @@ function modeFactory({ modeConfiguration }) {
       // there should be both CT and PT modalities and the modality should not be SM
       return {
         valid: isValid,
-        description: 'The mode requires both PT and CT series in the study',
+        description: i18n.t('Modes:The mode requires both PT and CT series in the study'),
       };
     },
     routes: [

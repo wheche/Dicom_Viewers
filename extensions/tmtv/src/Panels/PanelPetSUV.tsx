@@ -216,7 +216,7 @@ export default function PanelPetSUV({ servicesManager, commandsManager }: withAp
                 className="!h-[26px] !w-[115px] self-end !p-0"
                 onClick={updateMetadata}
               >
-                Reload Data
+                {t('Reload Data')}
               </Button>
             </div>
           </div>

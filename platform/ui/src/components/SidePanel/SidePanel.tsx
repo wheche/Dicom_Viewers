@@ -1,7 +1,8 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { CSSProperties, useCallback, useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+//import { useTranslation } from 'react-i18next';
+import i18n from 'i18next';
 
 import Icon from '../Icon';
 import Tooltip from '../Tooltip';
@@ -141,8 +142,12 @@ const createStyleMap = (
 const getToolTipContent = (label: string, disabled: boolean) => {
   return (
     <>
-      <div>{label}</div>
-      {disabled && <div className="text-white">{'Not available based on current context'}</div>}
+      <div>{i18n.t(`SidePanel:${label}`)}</div>
+      {disabled && (
+        <div className="text-white">
+          {i18n.t('SidePanel:Not available based on current context')}
+        </div>
+      )}
     </>
   );
 };
@@ -167,7 +172,7 @@ const SidePanel = ({
   expandedWidth = 248,
   onActiveTabIndexChange,
 }) => {
-  const { t } = useTranslation('SidePanel');
+  //const { t } = useTranslation('SidePanel');
 
   const [panelOpen, setPanelOpen] = useState(activeTabIndexProp !== null);
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -237,7 +242,7 @@ const SidePanel = ({
               content={getToolTipContent(childComponent.label, childComponent.disabled)}
               className={classnames(
                 'flex items-center',
-                side === 'left' ? 'justify-end ' : 'justify-start '
+                side === 'left' ? 'justify-end' : 'justify-start'
               )}
             >
               <div
@@ -292,7 +297,7 @@ const SidePanel = ({
     const numCols = getNumGridColumns(tabs.length, gridWidth);
 
     return (
-      <div className={classnames('flex grow ', side === 'right' ? 'justify-start' : 'justify-end')}>
+      <div className={classnames('flex grow', side === 'right' ? 'justify-start' : 'justify-end')}>
         <div
           className={classnames('bg-primary-dark text-primary-active flex flex-wrap')}
           style={getGridStyle(side, tabs.length, gridWidth, expandedWidth)}
@@ -354,7 +359,7 @@ const SidePanel = ({
     return (
       <div
         className={classnames(
-          'text-primary-active flex	 grow cursor-pointer select-none justify-center self-center text-[13px]'
+          'text-primary-active flex grow cursor-pointer select-none justify-center self-center text-[13px]'
         )}
         style={{
           ...(side === 'left'
@@ -364,14 +369,14 @@ const SidePanel = ({
         data-cy={`${tabs[0].name}-btn`}
         onClick={() => updatePanelOpen(!panelOpen)}
       >
-        <span>{tabs[0].label}</span>
+        <span>{i18n.t(`SidePanel:${tabs[0].label}`)}</span>
       </div>
     );
   };
 
   const getOpenStateComponent = () => {
     return (
-      <div className="bg-primary-dark flex select-none rounded-t pt-1.5 pb-[2px]	">
+      <div className="bg-primary-dark flex select-none rounded-t pt-1.5 pb-[2px]">
         {getCloseIcon()}
         {tabs.length === 1 ? getOneTabComponent() : getTabGridComponent()}
       </div>

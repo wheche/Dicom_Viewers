@@ -6,6 +6,7 @@ import { useModal } from '../../contextProviders';
 
 import Icon from '../Icon';
 import Typography from '../Typography';
+import { useTranslation } from 'react-i18next';
 
 import './Modal.css';
 
@@ -31,6 +32,8 @@ const Modal = ({
     hide();
   };
 
+  const { t } = useTranslation('Modals');
+
   const renderHeader = () =>
     title && (
       <header className="bg-primary-dark drag-handle flex items-center rounded-tl rounded-tr px-[20px] py-[13px]">
@@ -40,7 +43,7 @@ const Modal = ({
           className="flex grow !leading-[1.2]"
           data-cy="modal-header"
         >
-          {title}
+          {t(title)}
         </Typography>
         {closeButton && (
           <Icon

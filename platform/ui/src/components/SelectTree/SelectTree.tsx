@@ -5,6 +5,7 @@ import cloneDeep from 'lodash.clonedeep';
 import Icon from '../Icon';
 import Button, { ButtonEnums } from '../Button';
 import { LabelInfo } from '../Labelling/LabellingFlow';
+import i18n from 'i18next';
 
 interface PropType {
   autoFocus: boolean;
@@ -172,9 +173,9 @@ export class SelectTree extends Component<PropType> {
     const title = this.props.selectTreeFirstTitle;
 
     return (
-      <div className="flex flex-col justify-between border-b-2 border-solid border-black p-4 ">
+      <div className="flex flex-col justify-between border-b-2 border-solid border-black p-4">
         <div className="text-primary-active m-0 mb-5 p-2 leading-tight">
-          <span className="text-primary-light align-sub text-xl">{title}</span>
+          <span className="text-primary-light align-sub text-xl">{i18n.t('Dialog:' + title)}</span>
           <div className="float-right">
             <Icon
               name="icon-close"
@@ -197,8 +198,12 @@ export class SelectTree extends Component<PropType> {
             <input
               data-cy="input-annotation"
               type="text"
-              className={`border-primary-main border-primary-main appearance-none rounded border bg-black bg-black py-2 pr-3 text-sm leading-tight shadow transition duration-300 hover:border-gray-500 focus:border-gray-500 focus:outline-none focus:outline-none ${inputLeftPadding}`}
-              placeholder={this.props.items.length > 0 ? 'Search labels' : 'Enter label'}
+              className={`border-primary-main border-primary-main appearance-none rounded border bg-black py-2 pr-3 text-sm leading-tight shadow transition duration-300 hover:border-gray-500 focus:border-gray-500 focus:outline-none ${inputLeftPadding}`}
+              placeholder={
+                this.props.items.length > 0
+                  ? i18n.t('Dialog:Search labels')
+                  : i18n.t('Dialog:Enter label')
+              }
               autoFocus={this.props.autoFocus}
               onChange={this.searchLocations}
               value={this.state.searchTerm ? this.state.searchTerm : ''}
@@ -215,7 +220,7 @@ export class SelectTree extends Component<PropType> {
               type={ButtonEnums.type.primary}
               onClick={this.onSubmitHandler}
             >
-              Save
+              {i18n.t('Dialog:Save')}
             </Button>
           </div>
         )}
